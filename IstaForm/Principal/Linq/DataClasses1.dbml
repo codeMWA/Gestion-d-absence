@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IstaAinAtiq" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-QV3FUH3\SQLEXPRESS;Initial Catalog=IstaAinAtiq;Integrated Security=True" SettingsObjectName="IstaForm.Properties.Settings" SettingsPropertyName="IstaAinAtiqConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.stagiaire" Member="stagiaire">
+    <Type Name="stagiaire">
+      <Column Name="id_inscriptionsessionprogramme" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatriculeEtudiant" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Prenom" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Sexe" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="EtudiantActif" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="diplome" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Principale" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="LibelleLong" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="CodeDiplome" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EtudiantPayant" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="codediplome1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="prenom2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateNaissance" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Site" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Regimeinscription" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DateInscription" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateDossierComplet" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="LieuNaissance" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="MotifAdmission" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="CIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NTelelephone" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="NTel_du_Tuteur" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="Adresse" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Nationalite" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="anneeEtude" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Nom_Arabe" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Prenom_arabe" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="NiveauScolaire" Type="System.String" DbType="VarChar(210)" CanBeNull="true" />
+      <Association Name="stagiaire_absence" Member="absence" ThisKey="id_inscriptionsessionprogramme" OtherKey="id_inscriptionsessionprogramme" Type="absence" />
+    </Type>
+  </Table>
+  <Table Name="dbo.administrateur" Member="administrateur">
+    <Type Name="administrateur">
+      <Column Name="userA" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="passwordA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.absence" Member="absence">
+    <Type Name="absence">
+      <Column Name="CodeAbsence" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_inscriptionsessionprogramme" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joursAbsences" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="justificaton" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="jours_justifiés" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_absence" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="dateFinAbs" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Association Name="stagiaire_absence" Member="stagiaire" ThisKey="id_inscriptionsessionprogramme" OtherKey="id_inscriptionsessionprogramme" Type="stagiaire" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
