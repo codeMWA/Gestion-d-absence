@@ -1,0 +1,5 @@
+C:\Users\hp\source\repos\IstaProjet\IstaClass\bin\Debug\IstaClass.dll
+C:\Users\hp\source\repos\IstaProjet\IstaClass\bin\Debug\IstaClass.pdb
+C:\Users\hp\source\repos\IstaProjet\IstaClass\obj\Debug\IstaClass.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\IstaProjet\IstaClass\obj\Debug\IstaClass.dll
+C:\Users\hp\source\repos\IstaProjet\IstaClass\obj\Debug\IstaClass.pdb
